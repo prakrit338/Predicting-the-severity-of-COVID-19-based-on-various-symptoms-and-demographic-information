@@ -1,0 +1,33 @@
+1. Data Loading and Exploration:
+Data Source: The project starts by loading a dataset from a CSV file ("Cleaned-Data.csv") into a pandas DataFrame (covidDf).
+Exploration: Basic exploration of the dataset is performed, including checking its size, looking for missing values, and displaying general information about the data.
+
+
+2. Data Preprocessing:
+Severity Columns: Columns related to severity are selected using the filter method.
+Severity Consolidation: The severity information is consolidated into a new column named 'Severity' by combining values from multiple severity columns into lists.
+Column Removal: Individual severity columns and the 'Country' column are dropped since they are no longer needed.
+
+
+3. Feature Engineering:
+Severity Mapping: A function (reducer) is applied to map the lists in the 'Severity' column to a single severity level.
+Symptom Count: A new column ('symptom-count') is created by summing selected columns related to symptoms.
+
+
+4. Label Encoding:
+Label Encoder: The LabelEncoder from scikit-learn is used to convert categorical labels (severity levels) into numeric values.
+
+
+5. Data Visualization:
+Heatmap: A heatmap is generated using seaborn to visualize the correlation matrix of the dataset. This helps understand relationships between different features.
+
+
+6. Model Building and Evaluation:
+Train-Test Split: The dataset is split into training and testing sets.
+Decision Tree Classifier: A Decision Tree classifier is trained using the training set.
+Prediction: The model is used to make predictions on the test set.
+Evaluation: Classification metrics, such as precision, recall, and the confusion matrix, are used to evaluate the model's performance.
+
+
+7. Additional Steps:
+Encoding and Saving: There are additional steps related to encoding and saving the data in a specific format, possibly for further analysis or downstream tasks.
